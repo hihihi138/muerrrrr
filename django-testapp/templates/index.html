@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block metaKeywordsContent %}优酷,优酷精选,视频,视频分享,在线视频{% endblock %}
+{% block metaDescriptionContent %}每日发布优酷网的精选内容。{% endblock %}
+
+{% block menuMainPage %}<li class="current_page_item"><a href="http://www.google.cn">主页</a></li>{% endblock %}
+
+{% block content %}
+    <!-- start content -->
+	<div id="content">
+		<div class="post">
+			<div class="title">
+				<h2><a href="#">这是第一个</a></h2>
+				<p><small>Posted on August 20th, 2007 by <a href="#">Free CSS Templates</a></small></p>
+			</div>
+			<div class="entry">
+				<embed src="http://player.youku.com/player.php/sid/" quality="high" width="480" height="400" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash"></embed>
+			</div>
+			<p class="links"> <a href="#" class="more">Read More</a> <a href="#" class="comments">No Comments</a> </p>
+		</div>
+		<div class="post">
+			<div class="title">
+				<h2><a href="#">这是第2个</a></h2>
+				<p><small>Posted on August 20th, 2007 by <a href="#">Free CSS Templates</a></small></p>
+			</div>
+			<div class="entry">
+				<embed src="http://player.youku.com/player.php/sid/" quality="high" width="480" height="400" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash"></embed>
+			</div>
+			<p class="links"> <a href="#" class="more">Read More</a> <a href="#" class="comments">No Comments</a> </p>
+		</div>
+    </div>
+	<!-- end content -->
+{% endblock %}
