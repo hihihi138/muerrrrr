@@ -21,5 +21,21 @@
             </div>
         {% endfor %}
     </div>
-	<!-- end content -->
+    <!-- end content -->
+{% endblock %}
+
+{% block page_index %}
+<div id="page_index">
+    <span class="step-links">
+        {% if page.has_previous %}
+	    <a href="/page/{{ page.previous_page_number }}">上一页</a>
+	{% endif %}
+        <span class="current">
+	    <p>{{ page.number }}</p>
+	</span>
+	{% if page.has_next %}
+	    <a href="/page/{{ page.next_page_number }}">下一页</a>
+	{% endif %}
+    </span>
+</div>
 {% endblock %}

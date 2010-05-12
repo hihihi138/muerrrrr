@@ -20,6 +20,8 @@ class Video(models.Model):
 
     def __unicode__(self):
         return self.title
+    class Meta:
+	ordering = ['-post_date']
 
 class Comment(models.Model):
     subject = models.ForeignKey(Video)
