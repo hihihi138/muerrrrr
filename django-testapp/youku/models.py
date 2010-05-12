@@ -12,7 +12,7 @@ class User(models.Model):
 class Video(models.Model):
     title = models.CharField(max_length=100)
     url = models.URLField()
-    embed_code = models.CharField(max_length=500)
+    flash_url = models.URLField()
     posted_by = models.ForeignKey(User)
     post_date = models.DateTimeField()
     category = models.CharField(max_length=30)
@@ -27,7 +27,7 @@ class Comment(models.Model):
     email = models.EmailField(blank=True)
     pub_date = models.DateTimeField()
     context = models.TextField(max_length=4096)
-    from_addr = models.URLField()
+    from_addr = models.URLField(blank=True)
 
     def __unicode__(self):
         return self.subject
