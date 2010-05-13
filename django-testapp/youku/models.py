@@ -18,6 +18,12 @@ class Video(models.Model):
     category = models.CharField(max_length=30)
     tags = models.CharField(max_length=60)
 
+    def save_vid(self):
+	from datetime import datetime
+	dt_string = datetime.strftime(self.post_date, "%Y%m%d%H%M%S")
+	return dt_string[0:4] + "/" + dt_string[4:6] + "/" + dt_string[6:8] + "/" + dt_string[8:14]
+    vid = property(save_vid)
+
     def __unicode__(self):
         return self.title
     class Meta:

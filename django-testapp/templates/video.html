@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}{{ video.title }} - 优酷精选{% endblock %}
+{% block metaKeywordsContent %}{{ video.tag }}{% endblock %}
+{% block metaDescriptionContent %}{{ video.title }}{% endblock %}
+
+{% block content %}
+    <!-- start content -->
+    <div id="content">
+        <div class="post">
+            <div class="title">
+                <h2>{{ video.title }}</h2>
+                <p><small>Posted on {{ video.post_date }} by <a href="#">{{ video.posted_by }}</a></small></p>
+            </div>
+            <div class="entry">                
+               <embed src="{{ video.flash_url }}" quality="high" width="480" height="400" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash"></embed>
+            </div>
+            <p class="links"> <a href="{{ video.url }}" class="more">Read More</a> <a href="{{ video.url }}" class="comments">No Comments</a> </p>
+        </div>
+    </div>
+    <!-- end content -->
+{% endblock %}
