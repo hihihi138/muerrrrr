@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block metaKeywordsTitle %}网站建设日志{% endblock %}
+{% block metaKeywordsContent %}优酷,优酷精选,视频,视频分享,在线视频{% endblock %}
+{% block metaDescriptionContent %}网站建设日志。{% endblock %}
+
+{% block menuAboutUsPage %}<li class="current_page_item"><a href="http://www.google.cn">建站日志</a></li>{% endblock %}
+
+{% block content %}
+    <!-- start content -->
+    <div id="content">
+        {% for log in log_list %}
+            <div class="post">
+                <div class="title">
+                    <h2>{{ log.log_title }}</a></h2>
+                    <p><small>更新时间 {{ log.log_time }}</small></p>
+                </div>
+                <div class="entry">                
+                   {{ log.log_content }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <!-- end content -->
+{% endblock %}
+
+{% block page_index %}
+<div id="page_index">
+    <span class="step-links">
+        {% if log.has_previous %}
+	    <a href="/log/{{ log.previous_page_number }}">上一页</a>
+	{% endif %}
+        <span class="current">
+	    <p>{{ log.number }}</p>
+	</span>
+	{% if log.has_next %}
+	    <a href="/log/{{ log.next_page_number }}">下一页</a>
+	{% endif %}
+    </span>
+</div>
+{% endblock %}
